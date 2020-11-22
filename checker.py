@@ -44,6 +44,9 @@ try:
         if (site.checkInventory(url, browser)):
             inStockList[site.storeName] = site.findTitle(browser)
 
+    browser.close()
+    browser.quit()
+
     print("****************************************")
     if (len(inStockList) == 0):
         print("All OOS")
