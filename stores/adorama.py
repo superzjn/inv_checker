@@ -5,9 +5,10 @@ import requests
 
 class Adorama(Store):
 
-    def __init__(self):
+    def __init__(self, url):
         self.storeName = "Adorama"
         self.OOS_MSG = "Temporarily not available"
+        self.url = url
 
     def findTitle(self, browser):
         # To do. Not able to find the title

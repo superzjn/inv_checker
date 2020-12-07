@@ -3,9 +3,10 @@ from stores.stores import Store
 
 class Newegg(Store):
 
-    def __init__(self):
+    def __init__(self, url):
         self.storeName = "NewEgg"
         self.OOS_MSG = "SOLD OUT"
+        self.url = url
 
     def findTitle(self, browser):
         return super().findTitle(browser)

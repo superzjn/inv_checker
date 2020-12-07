@@ -3,9 +3,10 @@ from stores.stores import Store
 
 class BHPhotoVideo(Store):
 
-    def __init__(self):
+    def __init__(self, url):
         self.storeName = "BHPhotoVideo"
         self.OOS_MSG = "Notify When Available"
+        self.url = url
 
     def findTitle(self, browser):
         return super().findTitle(browser)

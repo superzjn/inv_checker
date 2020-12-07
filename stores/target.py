@@ -3,9 +3,10 @@ from stores.stores import Store
 
 class Target(Store):
 
-    def __init__(self):
+    def __init__(self, url):
         self.storeName = "Target"
         self.OOS_MSG = "Sold Out"  # not in use
+        self.url = url
 
     def findTitle(self, browser):
         return super().findTitle(browser)

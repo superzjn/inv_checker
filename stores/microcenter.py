@@ -3,9 +3,10 @@ from stores.stores import Store
 
 class MicroCenter(Store):
 
-    def __init__(self):
+    def __init__(self, url):
         self.storeName = "MicroCenter"
         self.OOS_MSG = "\'inStock\':\'False\'"
+        self.url = url
 
     def findTitle(self, browser):
         return super().findTitle(browser)

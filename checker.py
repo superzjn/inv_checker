@@ -27,22 +27,22 @@ try:
     for url in list:
         url = url.replace('\n', '')
         if ('bestbuy' in url):
-            site = Bestbuy()
+            site = Bestbuy(url)
         elif ('newegg' in url):
-            site = Newegg()
+            site = Newegg(url)
         elif ('walmart' in url):
-            site = Walmart()
+            site = Walmart(url)
         elif ('microcenter' in url):
-            site = MicroCenter()
+            site = MicroCenter(url)
         elif ('adorama' in url):
-            site = Adorama()
+            site = Adorama(url)
         elif ('bhphotovideo' in url):
-            site = BHPhotoVideo()
+            site = BHPhotoVideo(url)
         elif ('target' in url):
-            site = Target()
+            site = Target(url)
 
         if (site.checkInventory(url, browser)):
-            inStockList[site.storeName] = site.findTitle(browser)
+            inStockList[site.storeName] = site.url
 
     browser.close()
     browser.quit()

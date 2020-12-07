@@ -3,9 +3,10 @@ from stores.stores import Store
 
 class Walmart(Store):
 
-    def __init__(self):
+    def __init__(self, url):
         self.storeName = "Walmart"
         self.OOS_MSG = "Add to cart"
+        self.url = url
 
     def findTitle(self, browser):
         return super().findTitle(browser)

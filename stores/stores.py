@@ -2,9 +2,10 @@ from abc import ABC, abstractmethod
 
 
 class Store(ABC):
-    def __init__(self, name):
+    def __init__(self, name, url):
         self.storeName = name
         self.OOS_MSG = OOS_MSG
+        self.url = url
 
     @abstractmethod
     def checkInventory(self, url):

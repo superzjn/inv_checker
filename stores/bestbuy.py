@@ -3,9 +3,10 @@ from stores.stores import Store
 
 class Bestbuy(Store):
 
-    def __init__(self):
+    def __init__(self, url):
         self.storeName = "BestBuy"
         self.OOS_MSG = "Sold Out"
+        self.url = url
 
     def findTitle(self, browser):
         return browser.find_element_by_class_name('sku-title').text

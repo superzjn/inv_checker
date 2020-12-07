@@ -14,6 +14,9 @@ For hot selling products. Check to see if they are in stock or not.
 
 Just put the product links you want to check in urls.txt and run checker.py.
 
+For Linux/Mac
+Run ./install.sh to install dependencies
+
 ## Dependencies
 
 - Python3
@@ -25,13 +28,15 @@ Just put the product links you want to check in urls.txt and run checker.py.
 
 ### Setup Selenium
 
-#### Linux
+#### Linux/Mac
+Download Linux/Mac version geckodriver
 
 1. wget https://github.com/mozilla/geckodriver/releases/
 2. chmod +x geckodriver
 3. sudo mv geckodriver /usr/local/bin/
 
 #### Windows
+Download Windows version geckodriver
 
 1. Download from https://github.com/mozilla/geckodriver/releases/
 2. Add the path to geckodriver.exe to environment variable. May just copy it to C:\windows\system32
