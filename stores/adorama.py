@@ -5,10 +5,9 @@ import requests
 
 class Adorama(Store):
 
-    def __init__(self, url):
+    def __init__(self):
         self.storeName = "Adorama"
         self.OOS_MSG = "Temporarily not available"
-        self.url = url
 
     def findTitle(self, browser):
         # To do. Not able to find the title
@@ -17,11 +16,12 @@ class Adorama(Store):
     def checkInventory(self, url, browser):
         super().printUrl(url)
         res = requests.get(url, headers={"User-Agent": "Mozilla/5.0"})
-        res.raise_for_status()
+        browser.get(url)
+        # res.raise_for_status()
         # soup = bs4.BeautifulSoup(res.text, "lxml")
         soup = bs4.BeautifulSoup(res.text, "html.parser")
         # soup.select
-        if (self.OOS_MSG in soup.text):
+        if ((self.OOS_MSG in soup.text) or ("sold out" in soup.text)):
             print(self.storeName + " OOS XXX ")
             return False
         else:
