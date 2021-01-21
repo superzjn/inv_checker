@@ -4,6 +4,7 @@ import time
 import threading
 import concurrent.futures
 
+from pathlib import Path
 from selenium import webdriver
 from selenium.webdriver import FirefoxOptions
 from stores.bestbuy import Bestbuy
@@ -64,9 +65,11 @@ def check_all(list, in_stock_list):
 
 
 def main():
+
     start_time = time.perf_counter()
 
-    file = open('urls.txt')
+    data_folder = Path(".")
+    file = open(data_folder/"urls.txt")
     site_list = file.readlines()
     in_stock_list = {}
 
