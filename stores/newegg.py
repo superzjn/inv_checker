@@ -5,7 +5,7 @@ class Newegg(Store):
 
     def __init__(self, url):
         self.storeName = "NewEgg"
-        self.OOS_MSG = "SOLD OUT"
+        self.IS_MSG = "ADD TO CART"
         self.url = url
 
     def findTitle(self, browser):
@@ -16,7 +16,7 @@ class Newegg(Store):
         browser.get(url)
         elem = browser.find_element_by_id(
             'ProductBuy')
-        if (elem.text == self.OOS_MSG):
+        if (elem.text != self.IS_MSG):
             super().printOosMsg(browser)
             return False
         else:
